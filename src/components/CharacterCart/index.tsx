@@ -42,7 +42,9 @@ export const CharacterCart = ({
           </div>
           <div className="flex items-center">
             from
-            <span className="ml-1 font-semibold text-neutral-700">{locationName}</span>
+            <span className="ml-1 font-semibold text-neutral-700 overflow-hidden whitespace-nowrap text-ellipsis">
+              {locationName}
+            </span>
           </div>
         </div>
       </div>
