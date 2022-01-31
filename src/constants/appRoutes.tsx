@@ -1,2 +1,2 @@
 export const MAIN_PAGE: string = "/";
-export const CHARACTER_PAGE = (id: string): string => `/character/${id}`;
+export const CHARACTER_PAGE = (id: number | string): string => `/character/${id}`;
