@@ -1,7 +1,9 @@
 import axios from "axios";
-import { CONNECTION_ERROR } from "constants/errors";
 
-export const api = axios.create();
+import { CONNECTION_ERROR } from "constants/errors";
+import { host } from "utils/config";
+
+export const api = axios.create({ baseURL: host });
 
 api.interceptors.request.use(
   async function (config) {
