@@ -32,16 +32,17 @@ export const CharacterCart = ({
               {`In ${episodeCount} ${episodeCount > 1 ? "episodes" : "episode"}`}
             </div>
           )}
-          <Image src={imageUrl} alt={name} />
+          <Image className="w-full" src={imageUrl} alt={name} />
         </div>
         <div className="p-3">
-          <h2>{name}</h2>
+          <h2 className="font-bold">{name}</h2>
           <div className="flex items-center">
             <span>{status}</span>
             {!!species && <span className="ml-1">- {species}</span>}
           </div>
           <div className="flex items-center">
-            from <b className="ml-1">{locationName}</b>
+            from
+            <span className="ml-1 font-semibold text-neutral-700">{locationName}</span>
           </div>
         </div>
       </div>
