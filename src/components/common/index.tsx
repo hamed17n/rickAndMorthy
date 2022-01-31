@@ -1,4 +1,4 @@
 export { Image } from "./Image";
 export { PageWrapper } from "./PageWrapper";
-export { Loading } from "./Loading";
+export { Loading, LoadingWrapper } from "./Loading";
 export { Button } from "./Button";
