@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { CharacterCart } from ".";
+import { CharacterCart, CharacterCartProps } from ".";
 
 export default {
   title: "MainPage/CharacterCart",
@@ -14,7 +14,7 @@ export default {
   ],
 } as ComponentMeta<typeof CharacterCart>;
 
-const Template: ComponentStory<typeof CharacterCart> = (args: any) => (
+const Template: ComponentStory<typeof CharacterCart> = (args: CharacterCartProps) => (
   <CharacterCart {...args} />
 );
 
