@@ -21,6 +21,8 @@ This project was developed with **React** and **Typescript**. also I used **Tail
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+[Live Demo](https://hamed17n-rick-and-morthy.netlify.app/)
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
