@@ -17,7 +17,6 @@
     "axios": "^0.25.0",
     "axios-mock-adapter": "^1.20.0",
     "classnames": "^2.3.1",
-    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.34.12",
@@ -28,15 +27,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "pretty": "prettier --write \"src/**/*.{ts,tsx,js}\"",
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public -o docs"
   },
   "browserslist": {
     "production": [
