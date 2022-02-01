@@ -2,7 +2,7 @@
   "name": "rick-and-morthy",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://hamed17n.github.io/rickAndMorthy/",
+  "license": "MIT",
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },

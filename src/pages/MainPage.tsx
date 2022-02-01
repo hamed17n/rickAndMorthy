@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PageWrapper, LoadingWrapper, Button } from "components/common";
-import { CharacterCart } from "components/CharacterCart";
+import { CharacterCart } from "components/mainPage/CharacterCart";
 import { useCharacters } from "hooks";
 
 export const MainPage = (): JSX.Element => {

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
-import { MainPage, CharacterPage } from "Pages";
+import { MainPage, CharacterPage } from "pages";
 import { MAIN_PAGE, CHARACTER_PAGE } from "constants/appRoutes";
 
 const queryClient = new QueryClient({
