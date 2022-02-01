@@ -19,7 +19,7 @@ api.interceptors.response.use(
   async function (response) {
     return response.data;
   },
-  function (error: any) {
+  function (error) {
     return Promise.reject(error.response.data);
   },
 );

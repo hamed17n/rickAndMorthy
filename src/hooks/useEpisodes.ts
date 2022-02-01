@@ -5,11 +5,11 @@ import { getEpisodes } from "requests";
 import { EpisodeType } from "@types";
 
 export const useEpisodes = (list: string) => {
-  const { data, isLoading } = useQuery<EpisodeType[], Error>(
+  const { data, isLoading, isError, error } = useQuery<EpisodeType[], Error>(
     EPISODES(list),
     () => getEpisodes(list),
     { enabled: !!list },
   );
 
-  return { data, isLoading };
+  return { data, isLoading, isError, error };
 };

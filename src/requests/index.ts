@@ -10,8 +10,8 @@ export const getCharacters = (url: string) =>
         nextPageUrl: response.info.next.replace(host, ""),
       };
     })
-    .catch((error) => {
-      throw new Error(error.meta.msg);
+    .catch((response) => {
+      throw new Error(response.error);
     });
 
 export const getCharacter = (id: number) =>
@@ -19,8 +19,8 @@ export const getCharacter = (id: number) =>
     .then((response: any) => {
       return response;
     })
-    .catch((error) => {
-      throw new Error(error.meta.msg);
+    .catch((response) => {
+      throw new Error(response.error);
     });
 
 export const getLocation = (id: number) =>
@@ -28,8 +28,8 @@ export const getLocation = (id: number) =>
     .then((response: any) => {
       return response;
     })
-    .catch((error) => {
-      throw new Error(error.meta.msg);
+    .catch((response) => {
+      throw new Error(response.error);
     });
 
 export const getEpisodes = (list: string) =>
@@ -37,6 +37,6 @@ export const getEpisodes = (list: string) =>
     .then((response: any) => {
       return Array.isArray(response) ? response : [response];
     })
-    .catch((error) => {
-      throw new Error(error.meta.msg);
+    .catch((response) => {
+      throw new Error(response.error);
     });

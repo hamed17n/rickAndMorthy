@@ -5,11 +5,11 @@ import { getCharacter } from "requests";
 import { CharacterType } from "@types";
 
 export const useCharacter = (id: number) => {
-  const { data, isLoading } = useQuery<CharacterType, Error>(
+  const { data, isLoading, isError, error } = useQuery<CharacterType, Error>(
     CHARACTER(id),
     () => getCharacter(id),
     { enabled: !!id },
   );
 
-  return { data, isLoading };
+  return { data, isLoading, isError, error };
 };

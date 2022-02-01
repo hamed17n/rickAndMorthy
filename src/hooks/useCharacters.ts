@@ -11,14 +11,29 @@ interface CharacterRequestResult {
 }
 
 export const useCharacters = () => {
-  const { fetchNextPage, hasNextPage, isFetchingNextPage, data, isLoading } =
-    useInfiniteQuery<CharacterRequestResult, Error>(
-      CHARACTERS,
-      ({ pageParam = FIRST_CHARACTERS_URL }) => getCharacters(pageParam),
-      {
-        getNextPageParam: (lastPage) => lastPage.nextPageUrl,
-      },
-    );
+  const {
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    data,
+    isLoading,
+    isError,
+    error,
+  } = useInfiniteQuery<CharacterRequestResult, Error>(
+    CHARACTERS,
+    ({ pageParam = FIRST_CHARACTERS_URL }) => getCharacters(pageParam),
+    {
+      getNextPageParam: (lastPage) => lastPage.nextPageUrl,
+    },
+  );
 
-  return { fetchNextPage, hasNextPage, isFetchingNextPage, data, isLoading };
+  return {
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    data,
+    isLoading,
+    isError,
+    error,
+  };
 };

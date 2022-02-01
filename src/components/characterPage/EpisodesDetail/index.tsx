@@ -2,7 +2,8 @@ import React from "react";
 import cx from "classnames";
 
 import { useEpisodes } from "hooks";
-import { LoadingWrapper } from "components/common";
+import { LoadingWrapper, ErrorWrapper } from "components/common";
+import { GENERAL_ERROR } from "constants/errors";
 
 export interface EpisodesDetailProps {
   list: string;
@@ -27,15 +28,19 @@ const GridCell = ({ value, className }: GridCellProps) => (
 );
 
 export const EpisodesDetail = ({ list }: EpisodesDetailProps): JSX.Element => {
-  const { data, isLoading } = useEpisodes(list);
+  const { data, isLoading, isError, error } = useEpisodes(list);
 
   return (
     <div className="mt-4 pb-8">
       <h2 className="text-xl text-neutral-800 font-medium border-b border-neutral-200 p-2 mb-4">
         Episodes Detail
       </h2>
-      {isLoading || !data ? (
-        <LoadingWrapper />
+      {isLoading || !data || isError ? (
+        isError ? (
+          <ErrorWrapper message={error?.message || GENERAL_ERROR} />
+        ) : (
+          <LoadingWrapper />
+        )
       ) : (
         <div className="grid grid-cols-3 md:grid-cols-5 gap-px bg-neutral-200">
           <GridHeader title="Name" className="col-span-2" />

@@ -2,20 +2,25 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { useCharacter } from "hooks";
-import { PageWrapper, LoadingWrapper } from "components/common";
+import { PageWrapper, LoadingWrapper, ErrorWrapper } from "components/common";
 import { Header } from "components/characterPage/header";
 import { CharacterDetail } from "components/characterPage/CharacterDetail";
 import { LocationDetail } from "components/characterPage/LocationDetail";
 import { EpisodesDetail } from "components/characterPage/EpisodesDetail";
 import { host } from "utils/config";
 import { LOCATION, EPISODES } from "constants/apiRoutes";
+import { GENERAL_ERROR } from "constants/errors";
 
 export const CharacterPage = (): JSX.Element => {
   const { id } = useParams();
-  const { data } = useCharacter(Number(id) || 0);
+  const { data, isError, error, isLoading } = useCharacter(Number(id) || 0);
 
-  if (!data) {
+  if (isLoading) {
     return <LoadingWrapper />;
+  }
+
+  if ((isError && error) || !data) {
+    return <ErrorWrapper message={error?.message || GENERAL_ERROR} />;
   }
 
   return (
