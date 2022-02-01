@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Header } from ".";
 
 export default {
-  title: "DetailPage/Header",
+  title: "CharacterPage/Header",
   component: Header,
   decorators: [
     (Story) => (
