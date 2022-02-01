@@ -34,7 +34,7 @@ export const CharacterCart = ({
           )}
           <Image className="w-full" src={imageUrl} alt={name} />
         </div>
-        <div className="p-3">
+        <div className="p-3 w-2/3 sm:w-full">
           <h2 className="font-bold">{name}</h2>
           <div className="flex items-center">
             <span>{status}</span>
